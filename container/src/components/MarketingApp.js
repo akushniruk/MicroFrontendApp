@@ -1,6 +1,6 @@
 import { mount } from 'marketing/MarketingApp';
 import React, { useRef, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 export default () => {
   const ref = useRef(null);
@@ -17,7 +17,7 @@ export default () => {
       }
     });
 
-    history.listen(onParentNavigate);
+    history?.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref} />;
